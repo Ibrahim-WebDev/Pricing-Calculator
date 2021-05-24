@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Javascript Program</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <style>
+    body,
+    .jumbotron {
+      padding: 30px;
+    }
+
+    .text-giant {
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <h2>How much this Cashew cost?</h2>
+    <form>
+      <div class="form-group">
+        <label for="Price">விலை</label>
+        <input type="text" class="form-control" name="price" value="10">
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">அளவு</label>
+        <input type="number" class="form-control" name="quantity" value="1">
+      </div>
+    </form>
+    <div class="text-right text-giant total">₹10</div>
+  </div>
+
+
+  <!-- 🔥🔥🔥🔥 start javascript 🔥🔥🔥🔥 -->
+  <script>
+    const priceInput = document.querySelector('[name=price]');
+    const quantityInput = document.querySelector('[name=quantity]');
+    const total = document.querySelector('.total');
+
+    function calculatcashewcost() {
+      const price = priceInput.value;
+      const quantity = quantityInput.value;
+      const cost = price * quantity;
+      console.log(cost);
+      total.innerText = '₹' + cost;
+
+    }
+    priceInput.addEventListener('input', calculatcashewcost);
+  </script>
+</body>
+
+</html>
